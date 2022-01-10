@@ -1,5 +1,6 @@
 const {MessageActionRow, MessageButton, MessageEmbed} = require('discord.js')
 const embed = require('./Embed.js');
+const config = require('./config.json')
 
 exports.showMessage = async (msg, result)=>{
 
@@ -8,7 +9,7 @@ exports.showMessage = async (msg, result)=>{
 			new MessageButton()
 				// .setCustomId('primary')
 				.setLabel('Donate to the very POOR Uncle!')
-				.setURL('https://adhyayan.edu.np/wp-content/uploads/2019/06/buddha.jpg')
+				.setURL(config.linkDonate)
 				.setStyle('LINK')
 	);
 	const arrayOfEmbed = await embed.showResult(msg, result);

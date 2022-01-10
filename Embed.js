@@ -19,11 +19,7 @@ exports.showResult = (msg, result)=>{
 		let newEmbed = new MessageEmbed()
 			.setTitle(result.word)
 			.setDescription(firstLine)
-			.addField('**Meaning**:', meaning)
-			
-		result.example[0].forEach(el => {
-			newEmbed.addField('Example', el);
-		});
+			.addField('**Meaning**:', meaning)		
 
 		if(result.category[index]=='Noun'){
 			newEmbed.setColor('GREEN');
@@ -37,6 +33,12 @@ exports.showResult = (msg, result)=>{
 		else{
 			newEmbed.setColor('ORANGE');
 		}
+		if(result.example.length){
+			result.example[0].forEach(el => {
+			newEmbed.addField('Example', el);
+			});
+		} 
+		
 
 		arrayOfEmbeds.push(newEmbed);
 	});

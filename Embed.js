@@ -13,7 +13,7 @@ exports.showResult = (msg, result)=>{
 
 
 	result.category.forEach((el, index)=>{
-		meaning = result.meaning[index].join('; \n');
+		meaning = result.meaning[index].join('\n⚫️');
 		firstLine = `**${result.category[index]}** -  \/ ${result.pronunciation[index]} \/`;
 	
 		let newEmbed = new MessageEmbed()
@@ -35,7 +35,7 @@ exports.showResult = (msg, result)=>{
 		}
 		if(result.example.length){
 			result.example[0].forEach(el => {
-			newEmbed.addField('Example', el);
+			newEmbed.addField('**Example**', el);
 			});
 		} 
 		

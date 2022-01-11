@@ -13,7 +13,7 @@ exports.showResult = (msg, result)=>{
 
 
 	result.category.forEach((el, index)=>{
-		meaning = result.meaning[index].join(', ');
+		meaning = result.meaning[index].join('; \n');
 		firstLine = `**${result.category[index]}** -  \/ ${result.pronunciation[index]} \/`;
 	
 		let newEmbed = new MessageEmbed()

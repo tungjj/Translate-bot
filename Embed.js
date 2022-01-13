@@ -34,7 +34,7 @@ exports.showResult = (msg, result)=>{
 			newEmbed.setColor('ORANGE');
 		}
 		if(result.example.length){
-			result.example[0].forEach(el => {
+			result.example[index].forEach(el => {
 			newEmbed.addField('**Example**', el);
 			});
 		} 
